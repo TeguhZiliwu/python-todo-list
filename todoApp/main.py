@@ -1,5 +1,5 @@
 todoPrompt = "Enter a title : "
-userPrompt = "Type add, show, or exit : "
+userPrompt = "Type add, show, edit or exit : "
 todos = []
 
 while True:
@@ -14,6 +14,12 @@ while True:
             print("List of todo :")
             for item in todos:
                 print(item)
+        case "edit":
+            number = input("Number of the todo to edit : ")
+            number = int(number) - 1
+            newTodo = input("Enter a new title : ")
+            todos[number] = newTodo
+            # todos.__setitem__(number, newTodo)
         case "exit":
             break
         case randomCommand:
